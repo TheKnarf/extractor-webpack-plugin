@@ -1,0 +1,15 @@
+{
+  "name": "extractor-webpack-plugin",
+  "version": "0.1.0",
+  "description": "Eval & Extract assets from webpakc build",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["webpack", "webpack-plugin", "extractor-webpack-plugin"],
+  "author": "Frank Lyder Bredland <fl@nyggen.com>",
+  "license": "MIT",
+  "files": [
+    "./src/index.js"
+  ]
+}
