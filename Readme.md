@@ -1,5 +1,7 @@
 # Extractor Webpack Plugin
 
+[![NpmVersion](https://img.shields.io/npm/v/extractor-webpack-plugin.svg)](https://www.npmjs.com/package/extractor-webpack-plugin)
+
 A plugin that executes the main compilation asset and allows you to emit more compilation assets.
 
 ## Install
