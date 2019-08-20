@@ -1,0 +1,13 @@
+{
+  "name": "example",
+  "private": "true",
+  "scripts": {
+	  "build": "webpack --mode production",
+	  "build:watch": "webpack --mode production --watch"
+  },
+  "devDependencies": {
+    "extractor-webpack-plugin": "file:..",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  }
+}

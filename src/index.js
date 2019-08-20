@@ -10,21 +10,25 @@ Extractor.prototype.apply = function(compiler) {
 
 		if(typeof compilation['assets'][tmpFilename] !== 'undefined') {
 
-			const source = compilation['assets'][tmpFilename].source(),
-					func = eval(source);
+			try {
+				const source = compilation['assets'][tmpFilename].source(),
+						func = eval(source);
 
-			if(typeof func !== 'function') {
-				throw new Error('Not an function');
+				if(typeof func !== 'function') {
+					throw new Error('Not an function');
+				}
+
+				const addCompilationAsset = (name, content) => {
+					compilation.assets[name] = {
+						source: () => content,
+						size: () => content.length
+					};
+				}
+
+				func(addCompilationAsset);
+			} catch(e) {
+				compilation.errors.push(e);
 			}
-
-			const addCompilationAsset = (name, content) => {
-				compilation.assets[name] = {
-					source: () => content,
-					size: () => content.length
-				};
-			}
-
-			func(addCompilationAsset);
 
 			delete compilation['assets'][tmpFilename];
 		}
